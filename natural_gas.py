@@ -17,5 +17,6 @@ natural_gas = pd.read_csv("Nat_Gas.csv")
 # print (natural_gas.info())
 
 natural_gas.plot("Dates", "Prices")
+plt.t
 plt.ylabel("Prices")
 plt.show()
