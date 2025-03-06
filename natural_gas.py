@@ -13,4 +13,9 @@ import matplotlib.pyplot as plt
 #import the data and view it
 natural_gas = pd.read_csv("Nat_Gas.csv")
 
-print(natural_gas)
+# print(natural_gas.head(10))  #just to check the first 10 rows 
+# print (natural_gas.info())
+
+natural_gas.plot("Dates", "Prices")
+plt.ylabel("Prices")
+plt.show()
