@@ -8,15 +8,21 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+from datetime import datetime
+import seaborn as sns 
 
 
 #import the data and view it
-natural_gas = pd.read_csv("Nat_Gas.csv")
+natural_gas = pd.read_csv("Nat_Gas.csv", parse_dates=["Dates"])
 
 # print(natural_gas.head(10))  #just to check the first 10 rows 
-# print (natural_gas.info())
+print (natural_gas.info())
 
-natural_gas.plot("Dates", "Prices")
-plt.t
-plt.ylabel("Prices")
+
+sns.set_theme(style="whitegrid")
+plt.figure(figsize=(14,6))
+sns.lineplot(data=natural_gas, x = 'Dates', y = 'Prices', label = "Monthly Prices", color='magenta')
+plt.xlabel('Monthly Data')
+plt.ylabel("Prices (usd?)")
 plt.show()
