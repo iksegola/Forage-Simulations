@@ -19,10 +19,14 @@ natural_gas = pd.read_csv("Nat_Gas.csv", parse_dates=["Dates"])
 # print(natural_gas.head(10))  #just to check the first 10 rows 
 print (natural_gas.info())
 
+def plot_line():
+    sns.set_theme(style="whitegrid")
+    plt.figure(figsize=(14,6))
+    sns.lineplot(data=natural_gas, x = 'Dates', y = 'Prices', label = "Monthly Prices", color='magenta')
+    plt.xlabel('Monthly Data')
+    plt.ylabel("Prices (usd?)")
+    plt.show()
+    
+    return
 
-sns.set_theme(style="whitegrid")
-plt.figure(figsize=(14,6))
-sns.lineplot(data=natural_gas, x = 'Dates', y = 'Prices', label = "Monthly Prices", color='magenta')
-plt.xlabel('Monthly Data')
-plt.ylabel("Prices (usd?)")
-plt.show()
+plot_line()
